@@ -14,12 +14,12 @@ public class FilesParsingTest {
     private final String zipDirectory = "files/archive.zip";
 
     @Test
-    @DisplayName("Чтение ВСЕХ файлов из ZIP-архива и проверка их содержимого")
+    @DisplayName("Чтение и проверка содержимого ВСЕХ файлов из ZIP-архива (за один 'проход' архива)")
     void zipFileParsingAndReadingTest() throws Exception {
-        check.checkingZip(zipDirectory, List.of("PDF", "CSV", "XLSX", "XLS"));
+        check.checkingZip(zipDirectory, List.of("PDF", "CSV", "XLSX", "XLS", "JSON"));
     }
 
-    @ValueSource(strings = {"XLSX", "CSV", "PDF"})
+    @ValueSource(strings = {"XLSX", "CSV", "PDF", "JSON"})
     @ParameterizedTest(name = "Чтение и проверка содержимого {0}-файла")
     void readingPdfFromPDFTest(String extension) throws Exception {
         check.checkingZip(zipDirectory, List.of(extension));
