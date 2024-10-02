@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'gmail.sandrounknown1991'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.11.0",
+            "com.codeborne:selenide:7.4.2"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
